@@ -1,0 +1,23 @@
+*{
+  background-color: beige;
+}
+.card{
+  display: flex;
+  flex-direction: column;
+  background-color: aqua;
+  width: 30%;
+}
+img{
+  width: 100%;
+}
+.contenedor{
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+}
+.contenedor-cards{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
