@@ -1,34 +1,36 @@
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import IconCarrito from '../carrito/IconCarrito';
+import IconCarrito from '../carrito/IconCardWidget';
+import { Link, NavLink } from 'react-router-dom';
+import IconCardWidgate from '../carrito/IconCardWidget';
 
 const NavBar = () => {
   return (
     
-    <nav class="navbar navbar-expand-lg bg-body-red">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">Bambole</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+    <nav className="navbar navbar-expand-lg bg-body-white">
+    <div className="container-fluid">
+      <Link className="navbar-brand text-white" href="#">Bambole</  Link>
+      <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span className="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Productos</a>
+      <div className="collapse navbar-collapse" id="navbarNav">
+        <ul className="navbar-nav">
+          <li className="nav-item">
+            <NavLink to="/" className="nav-link active text-white">Home</NavLink>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Nosotros</a>
+          <li className="nav-item">
+            <NavLink to="/productos" className="nav-link text-white" >Productos</NavLink>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Ubicacion</a>
+          <li className="nav-item">
+            <NavLink to="/jewelery" className="nav-link text-white">jewelery</NavLink>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" >Contacto</a>
+          <li className="nav-item">
+            <NavLink to="/mens" className="nav-link text-white">Mens</NavLink>
           </li>
         </ul>
       </div>
-      <IconCarrito/>
+      <IconCardWidgate/>
     </div>
   </nav>
 
