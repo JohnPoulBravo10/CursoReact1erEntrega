@@ -1,4 +1,5 @@
 import React from 'react'
+import Counter from '../counter/Counter'
 
 export const CardDetail = ({item}) => {
   return (
@@ -10,6 +11,7 @@ export const CardDetail = ({item}) => {
         <h2>{item.title}</h2>
         <p>{item.description}</p>
         <h4>${item.price}</h4>
+        <Counter/>
         <button>Agregar al carrito</button>
       </div>
       
