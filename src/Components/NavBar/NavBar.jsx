@@ -10,7 +10,7 @@ const NavBar = () => {
     
     <nav className="navbar navbar-expand-lg bg-body-white">
     <div className="container-fluid">
-      <Link className="navbar-brand text-white" href="#">Bambole</  Link>
+      <Link className="navbar-brand text-white" to="/">Bambole</  Link>
       <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span className="navbar-toggler-icon"></span>
       </button>
@@ -23,10 +23,10 @@ const NavBar = () => {
             <NavLink to="/productos" className="nav-link text-white" >Productos</NavLink>
           </li>
           <li className="nav-item">
-            <NavLink to="/jewelery" className="nav-link text-white">jewelery</NavLink>
+            <NavLink to="/categoria/jewelery" className="nav-link text-white">jewelery</NavLink>
           </li>
           <li className="nav-item">
-            <NavLink to="/mens" className="nav-link text-white">Mens</NavLink>
+            <NavLink to="/categoria/mens" className="nav-link text-white">Mens</NavLink>
           </li>
         </ul>
       </div>
