@@ -1,10 +1,12 @@
 import React from 'react'
 import { ItemListConteiner } from '../Components/Items/ItemListConteiner'
+import { useParams } from 'react-router-dom'
 
 const Categoria = () => {
+  const {categoria} = useParams()
   return (
     <div>
-        <ItemListConteiner url={"https://fakestoreapi.com/products/category/jewelery"}/>
+        <ItemListConteiner q categoria={categoria}/>
     </div>
   )
 }

@@ -36,6 +36,7 @@ button{
   border-radius: 15px;
   background-color: white;
   color: black;
+
 }
 .detalles{
   display: flex;
@@ -162,4 +163,28 @@ div.active {
 .home{
   width: 90%;
   height: 100vh;
+}
+
+.imgCart{
+  width: 200px;
+  height: 200px;
+}
+
+.cartDetail{
+  border: 5px solid white;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.cartListConteiner{
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  justify-content: space-between;
+}
+.itemsCarrito{
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }

@@ -1,17 +1,22 @@
 import React, { useEffect, useState } from 'react'
 import { ItemList } from './ItemList'
+import { getData, getDocuments } from '../../services/firebaseService';
+import { query , where} from 'firebase/firestore';
 
-export const ItemListConteiner = ({url}) => {
+export const ItemListConteiner = ({q, categoria}) => {
     const [items,setItems] = useState([]);
 
-    const fetchProductos = () =>{
-        fetch(url)
-            .then(res=>res.json())
-            .then(data=>setItems(data))
-            .catch(error=>console.log(error))
-    } 
-
-    useEffect(() => {fetchProductos()},[])
+    console.log(categoria)
+    if(q){useEffect( () => {
+      const itemCollection = getDocuments("items")
+      getData(query(itemCollection,where("categoria","==",`${categoria}`))).then(data => setItems(data))
+  }, [categoria])
+    }else{
+      useEffect( () => {
+        const itemCollection = getDocuments("items")
+        getData(itemCollection).then(data => setItems(data))
+    }, [])
+    }
   return (
     <div className='contenedor-item-list'>
         {        items !== null &&

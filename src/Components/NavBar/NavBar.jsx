@@ -23,14 +23,16 @@ const NavBar = () => {
             <NavLink to="/productos" className="nav-link text-white" >Productos</NavLink>
           </li>
           <li className="nav-item">
-            <NavLink to="/category/jewelery" className="nav-link text-white">jewelery</NavLink>
+            <NavLink to="/category/Remeras" className="nav-link text-white">Remeras</NavLink>
           </li>
           <li className="nav-item">
-            <NavLink to="/category/mens" className="nav-link text-white">Mens</NavLink>
+            <NavLink to="/category/Buzos" className="nav-link text-white">Buzos</NavLink>
           </li>
         </ul>
       </div>
-      <IconCardWidgate/>
+      <Link to={`/cart`}>
+        <IconCardWidgate/>
+      </Link>
     </div>
   </nav>
 

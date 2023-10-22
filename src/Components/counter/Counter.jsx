@@ -1,11 +1,13 @@
 import React, { useState } from 'react'
 
-const Counter = () => {
+const Counter = ({top = 9999,onAdd,text}) => {
     const [count, setCount] = useState(0)
 
     const increment = () => {
+        if(count < top){
+            setCount(count + 1)
+        }
         
-        setCount(count + 1)
     }
     const decrement = () => {
         if(count >= 1){
@@ -14,9 +16,13 @@ const Counter = () => {
     }
   return (
     <div>
-        <button onClick={increment}>Agregar</button>
+        <button onClick={increment}>+</button>
         <span>{ count }</span>
-        <button onClick={decrement}>Restar</button>
+        <button onClick={decrement}>-</button>
+        <div>
+        <button onClick={()=>{onAdd(count)}}>{text}</button>
+        </div>
+        
     </div>
   )
 }

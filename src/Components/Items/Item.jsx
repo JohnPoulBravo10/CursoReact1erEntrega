@@ -5,15 +5,14 @@ const Item = ({item}) => {
   return (
     <div className='card'> 
       <section>
-        <img src={item.image} alt="" className='imagen'/>
+        <img src={item.img} alt="" className='imagen'/>
       </section>
         <div className='detalles'>
-          <h2>{item.title}</h2>
-          <h4>{item.price}</h4>
-          <p>{item.description}</p>
+          <h2>{item.nombre}</h2>
+          <h4>${item.precio}</h4>
           <Link to={`/item/${item.id}`}>
            <button>Detalles</button>
-        </Link>
+          </Link>
         </div>
         
         

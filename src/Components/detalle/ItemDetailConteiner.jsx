@@ -1,22 +1,27 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { ItemDetail } from './ItemDetail';
+import { getOneDocument } from '../../services/firebaseService';
+import CartContext from '../../useContext/cartContext/CartContext';
 
 
-export const ItemDetailConteiner = ({url}) => {
+export const ItemDetailConteiner = ({id}) => {
     const [item,setItem] = useState([]);
 
-    const fetchProductos = () =>{
-        fetch(url)
-            .then(res=>res.json())
-            .then(data=>setItem(data))
-            .catch(error=>console.log(error))
-    } 
+    useEffect( () => {
+      getOneDocument("items",id)
+      .then(res => setItem(res))
+  }, [])
 
-    useEffect(() => {fetchProductos()},[])
+  const onAdd = (q) => {
+    addItem(item, q)
+};
+
+const { addItem } = useContext(CartContext);
+
   return (
     <>
     {        item !== null &&
-                <ItemDetail item={item} />
+                <ItemDetail item={item} onAdd={onAdd}/>
             }
    </>
   )
