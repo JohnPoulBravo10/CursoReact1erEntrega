@@ -53,6 +53,10 @@ const CartListDetail = () => {
         print()
     }
 
+    const eliminar = () =>{
+        clear()
+    }
+
   return (
     <div className='cartListConteiner'>
         <p>Carrito  </p>
@@ -62,6 +66,7 @@ const CartListDetail = () => {
         }
         </div>     
         <strong>TOTAL: {precioTotal}</strong>
+        <button onClick={eliminar}>Limpiar carrito</button>
        <FormularioUsuario handleChange={handleChange} user={user} setUser={setUser}></FormularioUsuario>
         <button onClick={handleClick}>COMPRAR</button>
     </div>
